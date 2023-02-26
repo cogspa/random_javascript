@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">This is my div</div>
+
+<script>
+  function changeColor() {
+    // Generate a random color
+    var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+    // Set the background color of the div to the random color with a smooth transition
+    document.getElementById("myDiv").style.transition = "background-color 0.5s ease";
+    document.getElementById("myDiv").style.backgroundColor = randomColor;
+  }
+
+  function changeSize() {
+    // Generate random width and height values
+    var randomWidth = Math.floor(Math.random()*300) + 50;
+    var randomHeight = Math.floor(Math.random()*300) + 50;
+
+    // Set the width and height of the div to the random values with a random transition
+    document.getElementById("myDiv").style.transition = "width " + (Math.random()*2).toFixed(1) + "s ease, height " + (Math.random()*2).toFixed(1) + "s ease";
+    document.getElementById("myDiv").style.width = randomWidth + "px";
+    document.getElementById("myDiv").style.height = randomHeight + "px";
+  }
+
+  // Call the changeColor function every 0.5 seconds
+  setInterval(changeColor, 500);
+
+  // Call the changeSize function every 0.8 seconds
+  setInterval(changeSize, 800);
+</script>
+
+</body>
+</html>
